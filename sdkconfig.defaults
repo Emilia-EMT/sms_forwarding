@@ -50,7 +50,5 @@ CONFIG_ESP_COREDUMP_DATA_FORMAT_ELF=y
 CONFIG_ESP_COREDUMP_CHECKSUM_CRC32=y
 
 # ---- HTTP 服务器 ----
-# 单条请求头行上限，ESP-IDF 默认 512 字节。放宽到 1024，给较长的
-# Authorization(Basic 凭据 base64)与反代注入的转发头留余量，超限会在
-# httpd 解析阶段直接失败(到不了 handler)。
-CONFIG_HTTPD_MAX_REQ_HDR_LEN=1024
+# 单条请求头行上限，ESP-IDF 默认 512 字节。放宽到 1024
+CONFIG_HTTPD_MAX_REQ_HDR_LEN=4096
